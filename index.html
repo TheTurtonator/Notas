@@ -42,6 +42,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script>
+shownotes()
+
 // Declaring variables
 let addtext = document.getElementById('addtxt');
 let addtitle = document.getElementById('title');
@@ -53,7 +55,7 @@ let yournotes = document.getElementById('yournotes');
 
 // Function to show notes from local storage
 function shownotes() {
-  let notes = localStorage.getItem('note');
+  let notes = localStorage.shownotes()getItem('note');
   let notesobj = notes ? JSON.parse(notes) : [];
   let html = "";
   notesobj.forEach((element, index) => {
@@ -89,9 +91,9 @@ function editnote(noteid, notetitle, notetext) {
   updateid = noteid;
   addtitle.value = notetitle;
   addtext.value = notetext;
-  addbtn.innerText = "Edit note";
-  document.getElementById('labeltitle').innerHTML = "Edit title";
-  document.getElementById('labelnote').innerHTML = "Edit description";
+  addbtn.innerText = "Guardar";
+  document.getElementById('labeltitle').innerHTML = "Editar Título";
+  document.getElementById('labelnote').innerHTML = "Editar Contenido";
 }
 
 // Event listener for add button
